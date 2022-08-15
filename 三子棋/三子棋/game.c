@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "game.h"
 
-void InitBoard(char board[ROW][COL], int row, int col)//³õÊ¼»¯ÆåÅÌ
+void InitBoard(char board[ROW][COL], int row, int col)//åˆå§‹åŒ–æ£‹ç›˜
 {
 	int i = 0;
 	int j = 0;
@@ -14,11 +14,11 @@ void InitBoard(char board[ROW][COL], int row, int col)//³õÊ¼»¯ÆåÅÌ
 	}
 }
 
-void DisplayBoard(char board[ROW][COL], int row, int col)//·ÅÖÃÆåÅÌ
+void DisplayBoard(char board[ROW][COL], int row, int col)//æ”¾ç½®æ£‹ç›˜
 {
 	int i = 0;
 	int j = 0;
-	system("cls");//·ÀÖ¹ÆåÅÌÇ°ÏÈÉ¾³ıÔ­ÓĞ¾ÉÆåÅÌ
+	system("cls");//é˜²æ­¢æ£‹ç›˜å‰å…ˆåˆ é™¤åŸæœ‰æ—§æ£‹ç›˜
 	for (i = 0; i < row; i++)
 	{
 		for (j = 0; j < col; j++)
@@ -27,7 +27,7 @@ void DisplayBoard(char board[ROW][COL], int row, int col)//·ÅÖÃÆåÅÌ
 			if (j < col - 1)
 				printf("|");
 		}
-		printf("\n");//´òÓ¡ÆåÅÌ¸ñ
+		printf("\n");//æ‰“å°æ£‹ç›˜æ ¼
 		if (i < row - 1)
 		{
 			for (j = 0; j < col; j++)
@@ -36,22 +36,22 @@ void DisplayBoard(char board[ROW][COL], int row, int col)//·ÅÖÃÆåÅÌ
 				if (j < col - 1)
 					printf("|");
 			}
-			printf("\n");//´òÓ¡·Ö¸ôĞĞ
+			printf("\n");//æ‰“å°åˆ†éš”è¡Œ
 		}
 	}
 }
 
-void pve_PlayerMove(char board[ROW][COL], int row, int col)//Íæ¼ÒÂä×Ó
+void pve_PlayerMove(char board[ROW][COL], int row, int col)//ç©å®¶è½å­
 {
 	int x = 0;
 	int y = 0;
 	while (1)
 	{
 		DisplayBoard(board, ROW, COL);
-		printf("Íæ¼Ò×ß\n");
-		printf("ÇëÊäÈë×ø±ê:>");
+		printf("ç©å®¶èµ°\n");
+		printf("è¯·è¾“å…¥åæ ‡:>");
 		scanf("%d%d", &x, &y);
-		if (x >= 1 && x <= row && y >= 1 && y <= col)//¼ì²â×ø±êºÏ·¨ĞÔ
+		if (x >= 1 && x <= row && y >= 1 && y <= col)//æ£€æµ‹åæ ‡åˆæ³•æ€§
 		{
 			if (board[x - 1][y - 1] == ' ')
 			{
@@ -61,14 +61,14 @@ void pve_PlayerMove(char board[ROW][COL], int row, int col)//Íæ¼ÒÂä×Ó
 			}
 			else
 			{
-				printf("¸Ã×ø±ê±»Õ¼ÓÃ,ÇëÖØĞÂÊäÈë\n");
+				printf("è¯¥åæ ‡è¢«å ç”¨,è¯·é‡æ–°è¾“å…¥\n");
 				Sleep(1000);
 				system("cls");
 			}
 		}
 		else
 		{
-			printf("¸Ã×ø±ê³¬³ö·¶Î§£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¯¥åæ ‡è¶…å‡ºèŒƒå›´ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 			Sleep(1000);
 			system("cls");
 		}
@@ -82,18 +82,18 @@ void pvp_PlayerMove(char board[ROW][COL], int row, int col, int i)
 	while (1)
 	{
 		DisplayBoard(board, ROW, COL);
-		printf("Íæ¼Ò%d×ß\n", i);
-		printf("ÇëÊäÈë×ø±ê:>");
+		printf("ç©å®¶%dèµ°\n", i);
+		printf("è¯·è¾“å…¥åæ ‡:>");
 		scanf("%d%d", &x, &y);
 		if (x >= 1 && x <= row && y >= 1 && y <= col)
 		{
-			if (board[x - 1][y - 1] == ' '&&i==1)//Íæ¼Ò1
+			if (board[x - 1][y - 1] == ' '&&i==1)//ç©å®¶1
 			{
 				board[x - 1][y - 1] = '*';
 				Sleep(500);
 				break;
 			}
-			else if (board[x - 1][y - 1] == ' '&&i == 2)//Íæ¼Ò2
+			else if (board[x - 1][y - 1] == ' '&&i == 2)//ç©å®¶2
 			{
 				board[x - 1][y - 1] = '#';
 				Sleep(500);
@@ -101,14 +101,14 @@ void pvp_PlayerMove(char board[ROW][COL], int row, int col, int i)
 			}
 			else
 			{
-				printf("¸Ã×ø±ê±»Õ¼ÓÃ,ÇëÖØĞÂÊäÈë\n");
+				printf("è¯¥åæ ‡è¢«å ç”¨,è¯·é‡æ–°è¾“å…¥\n");
 				Sleep(1000);
 				system("cls");
 			}
 		}
 		else
 		{
-			printf("¸Ã×ø±ê³¬³ö·¶Î§£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¯¥åæ ‡è¶…å‡ºèŒƒå›´ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 			Sleep(1000);
 			system("cls");
 		}
@@ -120,11 +120,11 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 	int x = 0;
 	int y = 0;
 	DisplayBoard(board, ROW, COL);
-	printf("µçÄÔ×ß\n");
+	printf("ç”µè„‘èµ°\n");
 	Sleep(1000);
 	while (1)
 	{
-		x = rand() % row;//Éú³ÉËæ»ú×ø±ê
+		x = rand() % row;//ç”Ÿæˆéšæœºåæ ‡
 		y = rand() % col;
 		if (board[x][y] == ' ')
 		{
@@ -135,13 +135,13 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 	}
 }
 
-int IsFull(char board[ROW][COL], int row, int col)//ÅĞ¶ÏÆåÅÌÊÇ·ñÌîÂú
+int IsFull(char board[ROW][COL], int row, int col)//åˆ¤æ–­æ£‹ç›˜æ˜¯å¦å¡«æ»¡
 {
 	int i = 0;
 	int j = 0;
 	for (i = 0; i < row; i++)
 	{
-		for (j = 0; j <= col; j++)
+		for (j = 0; j < col; j++)
 		{
 			if (board[i][j] == ' ')
 				return 0;
@@ -150,31 +150,31 @@ int IsFull(char board[ROW][COL], int row, int col)//ÅĞ¶ÏÆåÅÌÊÇ·ñÌîÂú
 	return 1;
 }
 
-char IsWin(char board[ROW][COL], int row, int col)//ÅĞ¶ÏÈı×ÓÆåÊÇ·ñÓĞÒ»·½Ó®
+char IsWin(char board[ROW][COL], int row, int col)//åˆ¤æ–­ä¸‰å­æ£‹æ˜¯å¦æœ‰ä¸€æ–¹èµ¢
 {
 	int i = 0;
-	for (i = 0; i < row; i++)//ºáÈı
+	for (i = 0; i < row; i++)//æ¨ªä¸‰
 	{
 		if (board[i][0] == board[i][1] && board[i][0] == board[i][2] && board[i][0] != ' ')
 			return board[i][0];
 	}
-	for (i = 0; i < col; i++)//ÊúÈı
+	for (i = 0; i < col; i++)//ç«–ä¸‰
 	{
 		if (board[0][i] == board[1][i] && board[0][i] == board[2][i] && board[0][i] != ' ')
 			return board[0][i];
 	}
-		if (board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] != ' ')//Ğ±Èı
+		if (board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] != ' ')//æ–œä¸‰
 			return board[0][0];
 		if (board[2][0] == board[1][1] && board[2][0] == board[0][2] && board[2][0] != ' ')
 			return board[0][0];
-		if (1 == IsFull(board, ROW, COL))//ÆåÅÌÌîÂú
+		if (1 == IsFull(board, ROW, COL))//æ£‹ç›˜å¡«æ»¡
 		{
 			return 'Q';
 		}
 		return 'C';
 }
 
-void game1()//ÈË»ú£ºÍæ¼ÒÏÈÊÖ
+void game1()//äººæœºï¼šç©å®¶å…ˆæ‰‹
 {
 	char ret = 0;
 	char board[ROW][COL] = { 0 };
@@ -198,25 +198,25 @@ void game1()//ÈË»ú£ºÍæ¼ÒÏÈÊÖ
 	}
 	if (ret == '*')
 	{
-		printf("Íæ¼ÒÓ®\n");
+		printf("ç©å®¶èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else if (ret == '#')
 	{
-		printf("µçÄÔÓ®\n");
+		printf("ç”µè„‘èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else
 	{
-		printf("Æ½¾Ö\n");
+		printf("å¹³å±€\n");
 		Sleep(1500);
 		system("cls");
 	}
 }
 
-void game2()//ÈË»ú£ºµçÄÔÏÈÊÖ
+void game2()//äººæœºï¼šç”µè„‘å…ˆæ‰‹
 {
 	char ret = 0;
 	char board[ROW][COL] = { 0 };
@@ -240,19 +240,19 @@ void game2()//ÈË»ú£ºµçÄÔÏÈÊÖ
 	}
 	if (ret == '*')
 	{
-		printf("Íæ¼ÒÓ®\n");
+		printf("ç©å®¶èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else if (ret == '#')
 	{
-		printf("µçÄÔÓ®\n");
+		printf("ç”µè„‘èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else
 	{
-		printf("Æ½¾Ö\n");
+		printf("å¹³å±€\n");
 		Sleep(1500);
 		system("cls");
 	}
@@ -282,19 +282,19 @@ void pvp()
 	}
 	if (ret == '*')
 	{
-		printf("Íæ¼Ò1Ó®\n");
+		printf("ç©å®¶1èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else if (ret == '#')
 	{
-		printf("Íæ¼Ò2Ó®\n");
+		printf("ç©å®¶2èµ¢\n");
 		Sleep(1500);
 		system("cls");
 	}
 	else
 	{
-		printf("Æ½¾Ö\n");
+		printf("å¹³å±€\n");
 		Sleep(1500);
 		system("cls");
 	}
@@ -307,21 +307,21 @@ void pve()
 	do
 	{
 		choose();
-		printf("ÇëÑ¡Ôñ:>");
+		printf("è¯·é€‰æ‹©:>");
 		scanf("%d", &ch);
 		switch (ch)
 		{
 		case 1:
-			game1();//Íæ¼ÒÏÈÊÖ
+			game1();//ç©å®¶å…ˆæ‰‹
 			break;
 		case 2:
-			game2();//µçÄÔÏÈÊÖ
+			game2();//ç”µè„‘å…ˆæ‰‹
 			break;
 		case 0:
-			system("cls");//ÍË³öÓÎÏ·
+			system("cls");//é€€å‡ºæ¸¸æˆ
 			break;
 		default:
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 			Sleep(1000);
 			system("cls");
 			break;
