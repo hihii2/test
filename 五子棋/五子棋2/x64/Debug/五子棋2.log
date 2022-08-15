@@ -1,0 +1,3 @@
+﻿  game.c
+D:\code\五子棋2\五子棋2\game.h(1,1): warning C4828: 文件包含在偏移 0x1c2 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  五子棋2.vcxproj -> D:\code\五子棋2\x64\Debug\五子棋2.exe
