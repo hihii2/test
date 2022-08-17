@@ -1,0 +1,3 @@
+﻿  test.c
+D:\code\通用冒泡排序\通用冒泡排序\test.c(82,1): warning C4305: “初始化”: 从“double”到“float”截断
+  通用冒泡排序.vcxproj -> D:\code\通用冒泡排序\x64\Debug\通用冒泡排序.exe
