@@ -1,0 +1,4 @@
+﻿  test.c
+D:\code\判断两字符串是否旋转\判断两字符串是否旋转\test.c(7,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\code\判断两字符串是否旋转\判断两字符串是否旋转\test.c(8,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  判断两字符串是否旋转.vcxproj -> D:\code\判断两字符串是否旋转\x64\Debug\判断两字符串是否旋转.exe
