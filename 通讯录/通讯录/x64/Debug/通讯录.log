@@ -1,0 +1,11 @@
+﻿  contact.c
+D:\code\通讯录\通讯录\contact.h(1,1): warning C4828: 文件包含在偏移 0x3b0 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+D:\code\通讯录\通讯录\contact.c(137,9): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const char *”
+D:\code\通讯录\通讯录\contact.c(139,9): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“const int *”
+D:\code\通讯录\通讯录\contact.c(141,9): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const char *”
+D:\code\通讯录\通讯录\contact.c(143,9): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const char *”
+D:\code\通讯录\通讯录\contact.c(145,9): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“const char *”
+  test.c
+D:\code\通讯录\通讯录\contact.h(1,1): warning C4828: 文件包含在偏移 0x3b0 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  正在生成代码...
+  通讯录.vcxproj -> D:\code\通讯录\x64\Debug\通讯录.exe
